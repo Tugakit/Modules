@@ -1,0 +1,9 @@
+Get-Help *Commande*: Affiche l'aide sur une commande avec plusieurs types: -Full -Detailed -Examples
+Remove-Item:  Efface un fichier sur un dossier
+Get-ChildItem: Affiche tous les dossier et fichiers dans le dossier: -Hidden pour afficher tout ce qui est caché
+Copy-Item: Permet de copier un fichier vers un dossier, exaple: -Path P:\ma-18 -Destination C:\Users\Rui-Pedro.PINHEIRO-D\Desktop
+Clear: Pour tout déplacer vers le haut et avoir le powershel a nouveau clean.
+CD: Permet de se deplacer dans les dossiers - CD .. pour revenir en arrière et CD <rep> pour entrer dans un répertoire
+
+# - Commentaire en un seule ligne
+<# #> - Commetaire en plusieurs lignes

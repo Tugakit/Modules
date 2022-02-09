@@ -1,0 +1,11 @@
+1 - CD ESSAIS -> CD B -> CD B2- CD B2C
+2- CD C:\ESSAIS\B\B2\B2C
+3- CD -- -> CD ..
+4- CD ../../../B
+5- Remove-Item B2C
+6- Remove-Item .\B2\B2B
+7- Remove-Item ..\B\B2\B2A
+8- Copy-Item "C:\ESSAIS\ESSAI_1.TXT" -Destination "C:\ESSAIS\B\B2\ESSAI_1.TXT"
+9- Copy-Item "C:\ESSAIS\" -Destination "C:\COPIE_ESSAIS" -Recurse
+10- Move-Item "C:\COPIE_ESSAIS\" -Destination "C:\ESSAIS\B\B1\COPIE_ESSAIS"
+11- Move-Item "C:\ESSAIS\B\B1\COPIE_ESSAIS" -Destination "C:\ESSAIS\B\B2\MOVED_ESSAIS"
