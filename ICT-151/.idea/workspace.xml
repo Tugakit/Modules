@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="380d2c7a-8dac-4a32-a525-e1ec12689148" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cards/controler/controler.php" beforeDir="false" afterPath="$PROJECT_DIR$/Cards/controler/controler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cards/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Cards/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cards/view/snow_detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/Cards/view/snow_detail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cards/view/snows.php" beforeDir="false" afterPath="$PROJECT_DIR$/Cards/view/snows.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DOC/~$151-PHP_MySQL3_S2_amr.docx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +58,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1644401079384</updated>
-      <workItem from="1644401080449" duration="2855000" />
+      <workItem from="1644401080449" duration="3915000" />
     </task>
     <servers />
   </component>
