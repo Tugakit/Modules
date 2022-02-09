@@ -27,7 +27,7 @@ $rows=0; // Column count
                     <ul class="thumbnails">
                     <?php $rows=0;?>
                 <?php endif ?>
-y
+
                 <li class="span3">
                     <div class="thumbnail">
                     <a href="view/content/images/<?= $result['code']; ?>.jpg" target="blank"><img src="<?= $result['photo']; ?>" alt="<?= $result['code']; ?>"></a>

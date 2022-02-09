@@ -29,7 +29,6 @@ function displaySnows(){
     require_once "model/model.php";
     $snowsResults = getSnows();
     require "view/snows.php";
-    require "view/snow_detail.php";
 
 }
 
@@ -39,10 +38,15 @@ function getASnow($snow_code){
 
     $snowQuery = 'SELECT code, brand, model, snowLength, dailyPrice, qtyAvailable, description, photo FROM snows WHERE code='.$strgSeparator.$snow_code.$strgSeparator.'AND active=1';
 
+    $snowResult = executeQuerySelect($snowQuery);
 
-    $snowResults = executeQuerySelect($snowQuery);
+    return $snowResult;
 
-    return $snowResults;
+}
 
+function displayASnow(){
+    require_once "model/model.php";
+    $snowsResult = getASnow();
+    require "view/snow_detail.php";
 }
 

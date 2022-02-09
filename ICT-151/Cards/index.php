@@ -20,9 +20,11 @@ if (isset($_GET['action'])) {
       case 'displaySnows' :
           displaySnows();
           break;
-      case 'displayASnow' :
-          displayASnow($_GET['code']);
+      case 'displaySnow' :
+          displaySnow($_GET['code']);
           break;
+
+
 
       default :
           home();
