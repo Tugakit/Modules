@@ -1,0 +1,60 @@
+!
+version 12.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+service password-encryption
+!
+hostname ZT-SP-SWC01
+!
+enable secret 5 $1$mERr$sGMjhbYWmPaLdaWMLnc./1
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+interface GigabitEthernet0/1
+!
+interface FastEthernet1/1
+!
+interface FastEthernet2/1
+!
+interface FastEthernet3/1
+!
+interface FastEthernet4/1
+!
+interface GigabitEthernet5/1
+!
+interface GigabitEthernet6/1
+!
+interface FastEthernet7/1
+!
+interface FastEthernet8/1
+!
+interface Ethernet9/1
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+banner motd "ICT-146 - Pedro Pinheiro - SI-C2a"
+!
+!
+!
+line con 0
+ password 7 0811185D1A0E5505165A
+ login
+!
+line vty 0 4
+ login
+line vty 5 15
+ login
+!
+!
+!
+!
+end
+
