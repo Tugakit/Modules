@@ -68,29 +68,37 @@
                 </div>
                 <div id="divMenuRight" class="pull-right">
                     <div class="navbar">
-                        <button type="button" class="btn btn-navbar-highlight btn-large btn-primary" data-toggle="collapse" data-target=".nav-collapse">
+                        <button type="button" class="btn btn-navbar-highlight btn-large btnprimary" data-toggle="collapse" data-target=".nav-collapse">
                             NAVIGATION <span class="icon-chevron-down icon-white"></span>
                         </button>
                         <div class="nav-collapse collapse">
                             <ul class="nav nav-pills ddmenu">
-                                <!-- On commence par afficher les boutons qui s'afficheront, peu importe les événements-->
+                                <!-- On commence par afficher les boutons qui s'afficheront, peu
+                               importe les événements-->
                                 <li><a href="index.php?action=home">Home</a></li>
                                 <li><a href="index.php?action=displaySnows">Snows</a></li>
-                                <!-- On gère ensuite les cas pour lesquels on aimerait permettre à l'utilisateur de se connecter/s'inscrire-->
-                                <?php if(!isset($_SESSION['userEmailAddress']) || (!isset($_GET['action'])) || ((@$_GET['action']=="logout"))) :?>
+                                <!-- On gère ensuite les cas pour lesquels on aimerait permettre
+                               à l'utilisateur de se connecter/s'inscrire-->
+                                <?php if(!isset($_SESSION['userEmailAddress']) ||
+                                    (!isset($_GET['action'])) || ((@$_GET['action']=="logout"))) :session_destroy();?>
                                     <li><a href="index.php?action=login">Login</a></li>
-                                    <li><a href="index.php?action=register"  style="color:#FC05CB">Register</a></li>
-                                <!-- Puis la situation "connecté"-->
+                                    <li><a href="index.php?action=register"
+                                           style="color:#FC05CB">Register</a></li>
+                                    <!-- Puis la situation "connecté"-->
                                 <?php else :?>
                                     <li><a href="index.php?action=logout">Logout</a></li>
                                 <?php endif; ?>
                                 <?php if(isset($_SESSION['cart'])) :?>
-                                    <li><a href="index.php?action=displayCart"><img src="view/content/images/cart.png">  <?=  count($_SESSION['cart']);?> snow(s)</a></li>
+                                    <li><a href="index.php?action=displayCart"><img
+                                                    src="view/content/images/cart.png"> <?= count($_SESSION['cart']);?>
+                                            snow(s)</a></li>
                                 <?php endif; ?>
                             </ul>
-                            <!-- on affiche, si la session est active, l'adresse email de l'utilisateur-->
+                            <!-- on affiche, si la session est active, l'adresse email de
+                           l'utilisateur-->
                             <?php if(isset($_SESSION['userEmailAddress'])) :?>
-                                <h6>Vous êtes connecté : <?= $_SESSION['userEmailAddress'];?></h6>
+                                <h6>Vous êtes connecté : <?=
+                                    $_SESSION['userEmailAddress'];?></h6>
                             <?php endif; ?>
                         </div>
                     </div>

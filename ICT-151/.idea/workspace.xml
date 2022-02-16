@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="380d2c7a-8dac-4a32-a525-e1ec12689148" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Cards/model/UsersManager.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cards/model/dbConnector.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cards/model/snowsManager.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cards/view/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cards/controler/controler.php" beforeDir="false" afterPath="$PROJECT_DIR$/Cards/controler/controler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cards/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Cards/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cards/model/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/Cards/model/model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cards/view/gabarit.php" beforeDir="false" afterPath="$PROJECT_DIR$/Cards/view/gabarit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cards/view/snow_detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/Cards/view/snow_detail.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,10 +67,23 @@
       <option name="presentableId" value="Default" />
       <updated>1644401079384</updated>
       <workItem from="1644401080449" duration="3915000" />
+      <workItem from="1644996477553" duration="10337000" />
+      <workItem from="1645007308773" duration="227000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

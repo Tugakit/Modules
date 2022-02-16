@@ -14,6 +14,12 @@ require "controler/controler.php";
 if (isset($_GET['action'])) {
   $action = $_GET['action'];
   switch ($action) {
+      case 'login' :
+          login($_POST);
+          break;
+      case 'logout' :
+          logout();
+          break;
       case 'home' :
           home();
           break;
@@ -21,7 +27,7 @@ if (isset($_GET['action'])) {
           displaySnows();
           break;
       case 'displaySnow' :
-          displaySnow($_GET['code']);
+          displayASnow($_GET['code']);
           break;
 
 

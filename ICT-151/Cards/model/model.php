@@ -1,46 +1,42 @@
 <?php
-
-function openDBConnexion (){
-    $tempDbConnexion = null;
-    $sqlDriver = 'mysql';
-    $hostname = 'localhost';
-    $port = 3306;
-    $charset = 'utf8';
-    $dbName = 'snows';
-    $userName = 'root';
-    $userPwd = '1234';
-    $dsn = $sqlDriver . ':host=' . $hostname . ';dbname=' . $dbName . ';port=' . $port . ';charset=' . $charset;
-
-    try{
-        $tempDbConnexion = new PDO($dsn, $userName, $userPwd);
-    }
-    catch (PDOException $exception) {
-        echo 'Connection failed: ' . $exception->getMessage();
-    }
-    return $tempDbConnexion;
-}
-
-
-function executeQuerySelect($query){
-    $queryResult = null;
-
-    $dbConnexion = openDBConnexion();//open database connexion
-    if ($dbConnexion != null)
+/**
+ * This function is designed to verify user's login
+ * @param $userEmailAddress
+ * @param $userPsw
+ * @return bool : "true" only if the user and psw match the database. In all
+other cases will be "false".
+ */
+function isLoginCorrect($userEmailAddress, $userPsw){
+    $result = false;
+    $strSeparator = '\'';
+    $loginQuery = 'SELECT userHashPsw FROM users WHERE userEmailAddress = '.
+        $strSeparator . $userEmailAddress . $strSeparator;
+    require_once 'model/dbConnector.php';
+    $queryResult = executeQuerySelect($loginQuery);
+    if (count($queryResult) == 1)
     {
-        $statement = $dbConnexion->prepare($query);//prepare query
-        $statement->execute();//execute query
-        $queryResult = $statement->fetchAll();//prepare result for client
+        $userHashPsw = $queryResult[0]['userHashPsw'];
+        $hashPasswordDebug = password_hash($userPsw, PASSWORD_DEFAULT);
+        $result = password_verify($userPsw, $userHashPsw);
     }
-    $dbConnexion = null;//close database connexion
-    return $queryResult;
+    return $result;
 }
 
-
-function getSnows(){
-    $snowsQuery = 'SELECT code, brand, model, snowLength, dailyPrice, qtyAvailable, photo, active FROM snows';
-
-    $snowResults = executeQuerySelect($snowsQuery);
-
-    return $snowResults;
+/**
+ * This function is designed to get the type of user
+ * For the webapp, it will adapt the behavior of the GUI
+ * @param $userEmailAddress
+ * @return int (0 = customer ; 1 = seller)
+ */
+function getUserType($userEmailAddress){
+    $result = 0;//we fix the result to 0 -> customer
+    $strSeparator = '\'';
+    $getUserTypeQuery = 'SELECT userType FROM users WHERE users.userEmailAddress 
+=' . $strSeparator . $userEmailAddress . $strSeparator;
+    require_once 'model/dbConnector.php';
+    $queryResult = executeQuerySelect($getUserTypeQuery);
+    if (count($queryResult) == 1){
+        $result = $queryResult[0]['userType'];
+    }
+    return $result;
 }
-
