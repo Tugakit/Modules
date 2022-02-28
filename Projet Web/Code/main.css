@@ -1,0 +1,23 @@
+body {
+  font-family: roboto;
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+nav {
+  margin: 0;
+  padding: 0;
+  color: #24e5db;
+  background-color: #002f34;
+}
+
+#searchBar {
+  background-color: white;
+  text-align: center;
+  color: #fff;
+}
