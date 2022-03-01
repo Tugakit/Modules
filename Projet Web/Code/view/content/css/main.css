@@ -1,23 +1,41 @@
-body {
-  font-family: roboto;
-  background-color: #e3f8f5;
+* {
   margin: 0;
-  padding: 0;
+  font-family: roboto;
 }
+body {
+  background-color: #bbfdf3; /*A changer pour la vraie couleur #E3F8F5*/
+  margin: 0;
+  padding: 0px;
+  display: block;
+}
+
 h1,
 h2,
 h3 {
   text-align: center;
 }
 nav {
-  margin: 0;
-  padding: 0;
+  padding: 10px;
   color: #24e5db;
   background-color: #002f34;
 }
 
-#searchBar {
+.searchBar {
+  margin-top: 10px;
   background-color: white;
   text-align: center;
-  color: #fff;
+  color: #000;
+  display: flex;
+  margin: 15px 25%;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.searchBar p {
+  margin-left: 8px;
+  opacity: 50%;
+}
+
+.separator {
+  margin: 0 8px;
 }

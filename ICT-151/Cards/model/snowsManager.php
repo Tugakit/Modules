@@ -21,3 +21,20 @@ code='.$strgSeparator.$snow_code.$strgSeparator.'AND active=1';
     $snowResults = executeQuerySelect($snowQuery);
     return $snowResults;
 }
+
+//TODO - Finaliser la fonction pour ajouter une Snow dans la base de données
+function registerNewAccount($userEmailAddress, $userPsw){
+    $result = false;
+
+    $strSeparator = '\'';
+
+
+    $registerQuery = 'INSERT INTO users (`userEmailAddress`, `userHashPsw`) VALUES (' .$strSeparator . $userEmailAddress .$strSeparator . ','.$strSeparator . $userHashPsw .$strSeparator. ')';
+
+    require_once 'model/dbConnector.php';
+    $queryResult = executeQuery($registerQuery);
+    if($queryResult){
+        $result = $queryResult;
+    }
+    return $result;
+}

@@ -39,3 +39,26 @@ function getUserType($userEmailAddress){
     }
     return $result;
 }
+
+/**
+ * This function is designed to register a new account
+ * @param $userEmailAddress
+ * @param $userPsw
+ * @return bool|null
+ */
+function registerNewAccount($userEmailAddress, $userPsw){
+    $result = false;
+
+    $strSeparator = '\'';
+
+    $userHashPsw = password_hash($userPsw, PASSWORD_DEFAULT);
+
+    $registerQuery = 'INSERT INTO users (`userEmailAddress`, `userHashPsw`) VALUES (' .$strSeparator . $userEmailAddress .$strSeparator . ','.$strSeparator . $userHashPsw .$strSeparator. ')';
+
+    require_once 'model/dbConnector.php';
+    $queryResult = executeQuery($registerQuery);
+    if($queryResult){
+        $result = $queryResult;
+    }
+    return $result;
+}

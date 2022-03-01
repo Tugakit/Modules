@@ -33,3 +33,21 @@ function executeQuerySelect($query){
     $dbConnexion = null;//close database connexion
     return $queryResult;
 }
+
+/**
+ * This function is designed to insert value in database
+ * @param $query
+ * @return bool|null : $statement->execute() returne true is the insert was successful
+ */
+function executeQuery($query){
+    $queryResult = null;
+
+    $dbConnexion = openDBConnexion();//open database connexion
+    if ($dbConnexion != null)
+    {
+        $statement = $dbConnexion->prepare($query);//prepare query
+        $queryResult = $statement->execute();//execute query
+    }
+    $dbConnexion = null;//close database connexion
+    return $queryResult;
+}

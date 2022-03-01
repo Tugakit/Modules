@@ -52,7 +52,6 @@ $rows=0; // Column count
                     </div>
                 <?php endif ?>
             <?php endforeach ?>
-
         </div>
     </header>
 </article>

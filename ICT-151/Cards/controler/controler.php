@@ -25,16 +25,32 @@ function home(){
  * One for the seller, an other one for the customer.
  */
 function displaySnows(){
+    if (isset($_POST['resetCart'])) {
+        unset($_SESSION['cart']);
+    }
+
     require_once "model/snowsManager.php";
     $snowsResults = getSnows();
-    $usertype=$_SESSION['userType'];
-    if($usertype==1){
-        require "view/snows_admin.php";
-    }
-    else{
+
+    $_GET['action'] = "displaySnows";
+    if (isset($_SESSION['userType']))
+    {
+        switch ($_SESSION['userType']) {
+            case 0://this is a customer
+                require "view/snows.php";
+                break;
+            case 1://this a seller
+                require "view/snowsSeller.php";
+                break;
+            default:
+                require "view/snows.php";
+                break;
+        }
+    }else{
         require "view/snows.php";
     }
 }
+
 
 
 
@@ -86,4 +102,60 @@ function createSession($userEmailAddress){
     //set user type in Session
     $userType = getUserType($userEmailAddress);
     $_SESSION['userType'] = $userType;
+}
+function register($registerRequest){
+    //variable set
+    if (isset($registerRequest['inputUserEmailAddress']) && isset($registerRequest['inputUserPsw']) && isset($registerRequest['inputUserPswRepeat'])) {
+
+        //extract register parameters
+        $userEmailAddress = $registerRequest['inputUserEmailAddress'];
+        $userPsw = $registerRequest['inputUserPsw'];
+        $userPswRepeat = $registerRequest['inputUserPswRepeat'];
+
+        if ($userPsw == $userPswRepeat){
+            require_once "model/usersManager.php";
+            if (registerNewAccount($userEmailAddress, $userPsw)){
+                createSession($userEmailAddress);
+                $_GET['registerError'] = false;
+                $_GET['action'] = "home";
+                require "view/home.php";
+            }
+        }else{
+            $_GET['registerError'] = true;
+            $_GET['action'] = "register";
+            require "view/register.php";
+        }
+    }else{
+        $_GET['action'] = "register";
+        require "view/register.php";
+    }
+}
+//TODO - Finaliser la partie logique de la fornction
+function addSnow($registerRequest){
+    //variable set
+    if (isset($registerRequest['inputCode'])
+        && isset($registerRequest['inputBrand'])
+        && isset($registerRequest['inputModel'])
+        && isset($registerRequest['inputLength'])
+        && isset($registerRequest['inputQuantity'])
+        && isset($registerRequest['inputDescription'])
+        && isset($registerRequest['inputPrice'])
+        && isset($registerRequest['inputPhoto'])) {
+
+        //extract Snow parameters
+        $SnowCode = $registerRequest['inputCode'];
+        $SnowBrand = $registerRequest['inputBrand'];
+        $SnowModel = $registerRequest['inputModel'];
+        $SnowLength = $registerRequest['inputLength'];
+        $SnowQuantity = $registerRequest['inputQuantity'];
+        $SnowDescription = $registerRequest['inputDescription'];
+        $SnowPrice = $registerRequest['inputPrice'];
+        $SnowPhoto = $registerRequest['inputPhoto'];
+
+        if ($SnowCode, $SnowBrand, $SnowDescription, $SnowLength, $SnowPrice, $SnowPhoto){
+            //Les arguments de la fonction sont fonctionels et ce sont les bons, mais la ligne demande des points virgules
+            require_once "Cards/model/snowsManager.php";
+
+        }
+    }
 }
