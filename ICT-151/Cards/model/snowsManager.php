@@ -13,7 +13,6 @@ qtyAvailable, photo, active FROM snows';
  */
 function getASnow($snow_code){
     $strgSeparator = '\'';
-
     $snowQuery = 'SELECT code, brand, model, snowLength, dailyPrice, 
 qtyAvailable, description, photo FROM snows WHERE 
 code='.$strgSeparator.$snow_code.$strgSeparator.'AND active=1';
@@ -23,14 +22,10 @@ code='.$strgSeparator.$snow_code.$strgSeparator.'AND active=1';
 }
 
 //TODO - Finaliser la fonction pour ajouter une Snow dans la base de données
-function registerNewAccount($userEmailAddress, $userPsw){
+function registerNewSnow($SnowCode, $SnowBrand, $SnowModel, $SnowLength, $SnowQuantity, $SnowQuantity, $SnowDescription, $SnowPrice, $SnowPhoto ){
     $result = false;
-
     $strSeparator = '\'';
-
-
-    $registerQuery = 'INSERT INTO users (`userEmailAddress`, `userHashPsw`) VALUES (' .$strSeparator . $userEmailAddress .$strSeparator . ','.$strSeparator . $userHashPsw .$strSeparator. ')';
-
+    $registerQuery = 'INSERT INTO users (`code`, `brand`, "model", "snowLength", "qtyAvailable", "description","dailyPrice", "photo" ) VALUES (' .$strSeparator . $userEmailAddress .$strSeparator . ','.$strSeparator . $userHashPsw .$strSeparator. ')';
     require_once 'model/dbConnector.php';
     $queryResult = executeQuery($registerQuery);
     if($queryResult){
