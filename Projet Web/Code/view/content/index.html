@@ -2,22 +2,65 @@
 <html>
    <head>
       <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
-      <link href="css/main.css" rel="stylesheet" />
-      <link href="css/all.min.css" rel="stylesheet" />
+      <link href="css/main.css" rel="stylesheet"/>
+      <link href="css/all.min.css" rel="stylesheet"/>
       <!--...<link href="css/bootstrap.min.css" rel="stylesheet" />-->
       
       <title>Accueil</title>
    </head>
-   <body>
+   <body id="bootstrap-overrides">
         <nav class="nav">
              <h2>Anubis</h2>
         </nav>
+        
         <div class="searchBar">
-           <i class="fa fa-search fa-divide"></i>
-           <p>6456 Produits dans votre region</p>
-           <hr width="1" size="23%" class="separator">
+           <i class="fa fa-search"></i>
+           <input placeholder="6456 Produits dans votre region"></input>
            <i class="fa fa-location-arrow"></i>
-           <p>Region</p>
+            <select name="region" id="region-select">
+               <option value="">Votre region</option>
+               <option value="Appenzell ">Appenzell </option>
+               <option value="Argovie">Argovie</option>
+               <option value="Bale">Bale</option>
+               <option value="Berne">Berne</option>
+               <option value="Fribourg">Fribourg</option>
+               <option value="Geneve">Geneve</option>
+               <option value="Glaris">Glaris</option>
+               <option value="Grisons">Grisons</option>
+               <option value="Jura">Jura</option>
+               <option value="Lucerne">Lucerne</option>
+               <option value="Nidwald">Nidwald</option>
+               <option value="Obwald">Obwald</option>
+               <option value="Saint-Gall">Saint-Gall</option>
+               <option value="Schaffhouse">Schaffhouse</option>
+               <option value="Schwytz">Schwytz</option>
+               <option value="Soleure">Soleure</option>
+               <option value="Tessin">Tessin</option>
+               <option value="Thurgovie">Thurgovie</option>
+               <option value="Uri">Uri</option>
+               <option value="Valais">Valais</option>
+               <option value="Vaud">Vaud</option>
+               <option value="Zoug">Zoug</option>
+               <option value="Zurich">Zurich</option>
+            </select>
+           <button>Rechercher</button>
         </div>
-   </body>
+        <div class="categories">
+           <h2>Catégories</h2>
+            <div class="container">
+               <img src="https://images.pexels.com/photos/994517/pexels-photo-994517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+               <button>Vetements</button>
+            </div>
+
+            <div class="container">
+               <img src="https://images.pexels.com/photos/994517/pexels-photo-994517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+               <button>Vetements</button>
+            </div>
+
+            <div class="container">
+               <img src="https://images.pexels.com/photos/994517/pexels-photo-994517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+               <button>Vetements</button>
+            </div>
+        </div>
+      </body>
 </html>

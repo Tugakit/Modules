@@ -21,21 +21,90 @@ nav {
 }
 
 .searchBar {
-  margin-top: 10px;
+  width: 50%;
+  height: 50px;
+  vertical-align: middle;
+  margin-top: 0px;
   background-color: white;
   text-align: center;
   color: #000;
   display: flex;
   margin: 15px 25%;
-  padding: 10px;
   border-radius: 10px;
 }
 
-.searchBar p {
-  margin-left: 8px;
+.searchBar label {
+  margin: 0 8px;
   opacity: 50%;
 }
-
-.separator {
-  margin: 0 8px;
+.searchBar input {
+  width: 200px;
+  height:45px;
+  margin:0 ;
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
 }
+
+.searchBar button {
+  float: right;
+  width: 150px;
+  height:50px;
+  margin-right:0;
+  margin-left: auto;
+  background-color: #24e5db;
+  border: none;
+  border-radius: 10px;
+  font-size:18px;
+}
+
+.searchBar button:hover {
+  background-color: rgb(189, 189, 189);
+}
+.separator {
+  margin: auto 8px;
+}
+
+.fa{
+  margin: auto 5px;
+}
+
+select {
+  border: none;
+  
+} 
+
+  /*Container des catégories*/
+
+  .categories{
+    padding-top:20px;
+    background-color: #fff;
+    border-radius:  10px;
+    width: 85%;
+    margin:auto;
+    float:right
+  }
+  .container{
+    float:right
+    position: relative;
+    margin:20px;
+  }
+
+  .container img{
+    width: 15%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .container button {
+    background-color:#ffc;   /*TODO- A changer la couleur plus tard*/
+    border:none;
+    height: 30px;
+    margin: 0;
+    width:15%;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+
+  }

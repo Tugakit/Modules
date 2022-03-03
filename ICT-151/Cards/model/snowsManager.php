@@ -25,7 +25,7 @@ code='.$strgSeparator.$snow_code.$strgSeparator.'AND active=1';
 function registerNewSnow($SnowCode, $SnowBrand, $SnowModel, $SnowLength, $SnowQuantity, $SnowQuantity, $SnowDescription, $SnowPrice, $SnowPhoto ){
     $result = false;
     $strSeparator = '\'';
-    $registerQuery = 'INSERT INTO users (`code`, `brand`, "model", "snowLength", "qtyAvailable", "description","dailyPrice", "photo" ) VALUES (' .$strSeparator . $userEmailAddress .$strSeparator . ','.$strSeparator . $userHashPsw .$strSeparator. ')';
+    $registerQuery = 'INSERT INTO users (`code`, `brand`, `model`, `snowLength`, `qtyAvailable`, `description`,`dailyPrice`, `photo` ) VALUES (' .$strSeparator . $userEmailAddress .$strSeparator . ','.$strSeparator . $userHashPsw .$strSeparator. ')';
     require_once 'model/dbConnector.php';
     $queryResult = executeQuery($registerQuery);
     if($queryResult){
