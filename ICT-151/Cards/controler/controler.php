@@ -152,8 +152,8 @@ function addSnow($registerRequest){
         $SnowPrice = $registerRequest['inputPrice'];
         $SnowPhoto = $registerRequest['inputPhoto'];
 
-        if ($SnowCode, $SnowBrand, $SnowDescription, $SnowLength, $SnowPrice, $SnowPhoto){
-            //Les arguments de la fonction sont fonctionels et ce sont les bons, mais la ligne demande des points virgules
+        if ($SnowCode & $SnowBrand & $SnowDescription & $SnowLength & $SnowPrice & $SnowPhoto){
+            //Les arguments de la fonction sont fonctionels et ce sont les bons. L'erreur venait des virgules, il fallait plutot mettre des ET (&)
             require_once "Cards/model/snowsManager.php";
 
         }

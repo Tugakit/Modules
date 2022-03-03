@@ -21,7 +21,7 @@ code='.$strgSeparator.$snow_code.$strgSeparator.'AND active=1';
     return $snowResults;
 }
 
-//TODO - Finaliser la fonction pour ajouter une Snow dans la base de données
+//TODO - C'est maintenanr censé marcher -  a verifier lautre fonction
 function registerNewSnow($SnowCode, $SnowBrand, $SnowModel, $SnowLength, $SnowQuantity, $SnowQuantity, $SnowDescription, $SnowPrice, $SnowPhoto ){
     $result = false;
     $strSeparator = '\'';
