@@ -21,7 +21,7 @@ nav {
 }
 
 .searchBar {
-  width: 400px;
+  width: 50%;
   height: 50px;
   background-color: white;
   display: flex;
@@ -34,26 +34,21 @@ nav {
   opacity: 50%;
 }
 .searchBar input {
-  width: 200px;
+  width: 400px;
   height: 45px;
   margin: 0;
   background-color: #fff;
   border: none;
   border-radius: 10px;
-    right:0px;
+  right: 0px;
 }
 
 .searchBar button {
   float: right;
   width: 150px;
-<<<<<<< HEAD
-  height:50px;
-  margin: 0 8px;
-=======
   height: 50px;
   margin-right: 0;
   margin-left: auto;
->>>>>>> main
   background-color: #24e5db;
   border: none;
   border-radius: 10px;
@@ -73,15 +68,8 @@ nav {
 
 select {
   border: none;
-<<<<<<< HEAD
-  background-color:#fff;
-  
-} 
-
-  /*Container des catégories*/
-=======
+  background-color: #fff;
 }
->>>>>>> main
 
 /*Container des catégories*/
 
@@ -90,30 +78,37 @@ select {
   margin: auto;
   background-color: #fff;
   border-radius: 10px;
-  width: 50%;
+  width: 75%;
+  height: 200px;
 }
+
 .container {
-  float: right;
+  padding-top: 20px; /* Pour ajouter un espace au dessus du cotainer*/
+  width: auto;
+  margin: auto;
   position: relative;
-  margin: 20px;
 }
 
 .container img {
-  width: 15%;
-  height: auto;
+  margin: 0 50px;
+  width: 60%; /*Comme les nouvelles images locales ne sont pas de la meme taill, il faut les mettre a la meme resolution et maintenir le pourcentage pour avoir un site plus responsive*/
   border-radius: 10px;
 }
 
 .container button {
+  margin: 0 50px;
   background-color: #ffc; /*TODO- A changer la couleur plus tard*/
   border: none;
   height: 30px;
-  margin: 0;
-  width: 15%;
-  border-radius: 10px;
+  width: 60%;
+  border-radius: 5px;
   position: absolute;
   bottom: 4px;
   left: 0;
+}
+.flex {
+  margin: auto;
+  display: flex;
 }
 .container button:hover {
   background-color: #ffc; /*TODO- A changer la couleur HOVER plus tard*/
