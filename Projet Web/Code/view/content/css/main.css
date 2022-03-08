@@ -137,11 +137,13 @@ select {
 }
 
 .user a {
+
   margin: 0 50px;
-  background-color: #E3F8F5; /*TODO- A changer la couleur plus tard*/
+  background-color: rgba(227, 248, 245, 0.5); /*TODO- A changer la couleur plus tard*/
   text-align: center;
   height: 30px;
-  width: 15%;
+  color:#E3F8F5;
+  width: 50%;
   border-radius: 5px;
   position: absolute;
   bottom: 4px;
@@ -149,4 +151,14 @@ select {
 }
 
 .user a:hover {
-  background-color: #24E5DB;
+  background-color: rgba(0, 255, 242, 0.781)
+}
+
+.articleshot {
+  margin: 20px auto;
+  padding-top: 20px; /* Pour ajouter un espace au dessus du titre h2*/
+  background-color: #fff;
+  border-radius: 10px;
+  width: 75%;
+  height: 250px;
+}
