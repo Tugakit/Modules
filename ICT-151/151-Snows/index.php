@@ -35,7 +35,7 @@ if (isset($_GET['action'])) {
       case 'addSnow' :
           addSnow($_POST);
           break;
-      case 'deleteSnow' :
+      case 'deleteSnow':
           deleteSnow($_GET['code']);
           break;
       case 'editSnow' :

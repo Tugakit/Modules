@@ -60,3 +60,43 @@ function addNewSnow($code, $brand, $model, $snowLength, $qtyAvailable, $descript
     return $result;
 }
 
+function deleteASnow($code)
+{
+    $result = false;
+    $strSeparator = '\'';
+    $addSnowQuery = 'DELETE FROM snows WHERE (`code`) LIKE (' .$strSeparator . $code .$strSeparator .')';
+    require_once 'model/dbConnector.php';
+    $queryResult = executeQuery($addSnowQuery);
+    if($queryResult){
+        $result = $queryResult;
+    }
+    return $result;
+}
+
+function updateASnow($code, $brand, $model, $snowLength, $qtyAvailable, $description, $dailyPrice, $photo ){
+    $result = false;
+
+    $strSeparator = '\'';
+
+    // test de requete manuel pour debug
+    // $addSnowQuery = "INSERT INTO snows (`code`, `brand`,`model`, `snowLength`,`qtyAvailable`, `description`,`dailyPrice`, `photo`,`active`) VALUES ('a','a','a','1','1','a','1','a','1')";
+
+    $updateSnowQuery = 'UPDATE snows SET code= ' . $strSeparator . $code.$strSeparator
+        . ', brand=' . $strSeparator . $brand . $strSeparator
+        . ', model=' . $strSeparator. $model .$strSeparator
+        . ', snowLength=' . $strSeparator. $snowLength .$strSeparator
+        . ', qtyAvailable=' . $strSeparator. $qtyAvailable .$strSeparator
+        . ', description=' . $strSeparator. $description .$strSeparator
+        . ', dailyPrice=' . $strSeparator. $dailyPrice .$strSeparator
+        . ', photo=' . $strSeparator. $photo .$strSeparator
+        . ', active=' . $strSeparator. $active .$strSeparator
+        .' WHERE code LIKE '.$strSeparator.$code.$strSeparator;
+
+
+    require_once 'model/dbConnector.php';
+    $queryResult = executeQuery($addSnowQuery);
+    if($queryResult){
+        $result = $queryResult;
+    }
+    return $result;
+}

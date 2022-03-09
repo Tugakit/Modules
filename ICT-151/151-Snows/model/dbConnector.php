@@ -63,7 +63,7 @@ function openDBConnexion (){
     //$userName = 'appliConnector';
     //$userPwd = '123qweasD$';
     $userName = 'root';
-    $userPwd = 'root';
+    $userPwd = '1234';
     $dsn = $sqlDriver . ':host=' . $hostname . ';dbname=' . $dbName . ';port=' . $port . ';charset=' . $charset;
 
     try{

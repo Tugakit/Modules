@@ -32,8 +32,8 @@ ob_start();
                         <td><?= $result['qtyAvailable']; ?></td>
                         <td><img src="<?= $result['photo']; ?>" style="height: 20px"></td>
                         <td><?= $result['active']; ?></td>
-                        <td><i class="far fa-file-times"></i></td>
-                        <td><i class="far fa-edit"></i></td>
+                        <td><a href="index.php?action=deleteSnow&code=<?= $result['code']; ?>"><i class="far fa-file-times"></i></a></td>
+                        <td><a href="index.php?action=editSnow&code=<?= $result['code']; ?>"><i class="far fa-edit"></i></td>
                     </tr>
                 <?php endforeach ?>
             </table>

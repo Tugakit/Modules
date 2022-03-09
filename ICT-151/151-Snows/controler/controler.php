@@ -176,3 +176,48 @@ function addSnow($addSnowRequest){
     }
 }
 
+function deleteSnow($snow_code){
+    require_once "model/snowsManager.php";
+    if (deleteASnow($snow_code)){
+        $_GET['action'] = "deleteSuccess";
+        $snowsResults = getSnows();
+        require "view/snowsSeller.php";
+    }else{
+        $_GET['addSnowError'] = true;
+        require "view/snowsSeller.php";
+    }
+}
+
+function editSnow($snow_code){
+    require_once "model/snowsManager.php";
+    $snowsResults= getASnow($snow_code);
+    require "view/editSnow.php";
+
+}
+function updateSnow($addSnowRequest) {
+    if (isset($addSnowRequest['inputCode']) && isset($addSnowRequest['inputBrand']) && isset($addSnowRequest['inputModel'])&& isset($addSnowRequest['inputSnowLength'])&& isset($addSnowRequest['inputQtyAvailable'])&& isset($addSnowRequest['inputDescription'])&& isset($addSnowRequest['inputDailyPrice'])&& isset($addSnowRequest['inputPhoto'])) {
+
+        //extract parameters
+        $code = $addSnowRequest['inputCode'];
+        $brand = $addSnowRequest['inputBrand'];
+        $model = $addSnowRequest['inputModel'];
+        $snowLength = $addSnowRequest['inputSnowLength'];
+        $qtyAvailable = $addSnowRequest['inputQtyAvailable'];
+        $description = $addSnowRequest['inputDescription'];
+        $dailyPrice = $addSnowRequest['inputDailyPrice'];
+        $photo = $addSnowRequest['inputPhoto'];
+        $active = $addSnowRequest['inputActive'];
+
+        require_once "model/snowsManager.php";
+        if (updateASnow($code, $brand, $model, $snowLength, $qtyAvailable, $description, $dailyPrice, $photo, $active)){
+            $_GET['action'] = "addSuccess";
+            $snowsResults = getSnows();
+            require "view/snowsSeller.php";
+        }else{
+            $_GET['addSnowError'] = true;
+            require "view/addSnow.php";
+        }
+    }else{
+        require "view/addSnow.php";
+    }
+}
