@@ -3,7 +3,7 @@
   font-family: roboto;
 }
 body {
-  background-color: #E3F8F5; /*A changer pour la vraie couleur #E3F8F5*/
+  background-color: #e3f8f5; /*A changer pour la vraie couleur #E3F8F5*/
   margin: 0;
   padding: 0px;
   display: block;
@@ -84,7 +84,7 @@ select {
 
 .container {
   padding-top: 20px; /* Pour ajouter un espace au dessus du cotainer*/
-  width: auto;
+  width: 1500px;
   margin: auto;
   position: relative;
 }
@@ -92,12 +92,12 @@ select {
 .container img {
   margin: 0 50px;
   width: 60%; /*Comme les nouvelles images locales ne sont pas de la meme taill, il faut les mettre a la meme resolution et maintenir le pourcentage pour avoir un site plus responsive*/
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .container button {
   margin: 0 50px;
-  background-color: #E3F8F5; /*TODO- A changer la couleur plus tard*/
+  background-color: #e3f8f5; /*TODO- A changer la couleur plus tard*/
   border: none;
   height: 30px;
   width: 60%;
@@ -111,7 +111,7 @@ select {
   display: flex;
 }
 .container button:hover {
-  background-color: #24E5DB; /*TODO- A changer la couleur HOVER plus tard*/
+  background-color: #24e5db; /*TODO- A changer la couleur HOVER plus tard*/
 }
 
 .starredUsers {
@@ -137,12 +137,16 @@ select {
 }
 
 .user a {
-
   margin: 0 50px;
-  background-color: rgba(227, 248, 245, 0.5); /*TODO- A changer la couleur plus tard*/
+  background-color: rgba(
+    227,
+    248,
+    245,
+    0.5
+  ); /*TODO- A changer la couleur plus tard*/
   text-align: center;
   height: 30px;
-  color:#E3F8F5;
+  color: #e3f8f5;
   width: 50%;
   border-radius: 5px;
   position: absolute;
@@ -151,14 +155,38 @@ select {
 }
 
 .user a:hover {
-  background-color: rgba(0, 255, 242, 0.781)
+  background-color: rgba(0, 255, 242, 0.781);
 }
 
-.articleshot {
+.hotarticles {
   margin: 20px auto;
   padding-top: 20px; /* Pour ajouter un espace au dessus du titre h2*/
   background-color: #fff;
   border-radius: 10px;
   width: 75%;
   height: 250px;
+}
+
+.hotarticles img {
+  margin: 0 50px;
+  width: 20%; /*Comme les nouvelles images locales ne sont pas de la meme taill, il faut les mettre a la meme resolution et maintenir le pourcentage pour avoir un site plus responsive*/
+  border-radius: 5px;
+}
+
+.hotarticles a {
+  /* Il faudra faire toute l'encadré clickable mais pas juste le titre - A mettre dans le container*/
+  margin: 0 50px;
+  background-color: rgba(227,248,245,0.5); /*TODO- A changer la couleur plus tard*/
+  text-align: center;
+  height: 30px;
+  color: #e3f8f5;
+  width: 20%;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+}
+
+.hotarticles a:hover {
+  background-color: rgba(0, 255, 242, 0.781);
 }
