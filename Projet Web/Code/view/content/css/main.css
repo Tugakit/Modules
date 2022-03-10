@@ -168,19 +168,24 @@ select {
 }
 
 .hotarticles img {
-  margin: 0 50px;
-  width: 20%; /*Comme les nouvelles images locales ne sont pas de la meme taill, il faut les mettre a la meme resolution et maintenir le pourcentage pour avoir un site plus responsive*/
+  margin: 0 35px;
+  width: 75%; /*Comme les nouvelles images locales ne sont pas de la meme taill, il faut les mettre a la meme resolution et maintenir le pourcentage pour avoir un site plus responsive*/
   border-radius: 5px;
 }
 
 .hotarticles a {
   /* Il faudra faire toute l'encadré clickable mais pas juste le titre - A mettre dans le container*/
-  margin: 0 50px;
-  background-color: rgba(227,248,245,0.5); /*TODO- A changer la couleur plus tard*/
+  margin: 0 35px;
+  background-color: rgba(
+    227,
+    248,
+    245,
+    0.5
+  ); /*TODO- A changer la couleur plus tard*/
   text-align: center;
   height: 30px;
   color: #e3f8f5;
-  width: 20%;
+  width: 75%;
   border-radius: 5px;
   position: absolute;
   bottom: 4px;
