@@ -44,15 +44,11 @@ if (isset($_GET['action'])) {
       case 'updateSnow' :
           updateSnow($_POST);
           break;
-      case 'snowLeasingRequest':
-          snowLeasingRequest($_GET['code']);
+      case 'displayUsers':
+          displayUsers();
           break;
-      case 'updateCartRequest':
-           updateCartRequest($_GET['code'], $_POST);
-          break;
-      case 'displayCart':
-          displayCart();
-          break;
+      case 'displayAUser':
+          displayUser();
       default :
           home();
   }

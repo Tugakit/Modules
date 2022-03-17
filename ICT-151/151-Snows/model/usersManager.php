@@ -34,6 +34,25 @@ function isLoginCorrect($userEmailAddress, $userPsw){
     return $result;
 }
 
+function getUsers(){
+    $usersQuery = 'SELECT id, userEmailAddress,getUsers, userType, FROM users';
+
+    require_once 'model/dbConnector.php';
+    $usersResults = executeQuerySelect($usersQuery);
+
+    return $usersResults;
+}
+function getASnow($snow_code){
+    $strSeparator = '\'';
+
+    // Query to get the selected snow. The active code must be set to 1 to display only snows to display. It avoids possibilty to user selecting a wrong code (get paramater in url)
+    $snowQuery = 'SELECT code, brand, model, snowLength, dailyPrice, qtyAvailable, description, photo, active FROM snows WHERE code=' . $strSeparator . $snow_code . $strSeparator ;
+
+    require_once 'model/dbConnector.php';
+    $snowResults = executeQuerySelect($snowQuery);
+
+    return $snowResults;
+}
 /**
  * This function is designed to register a new account
  * @param $userEmailAddress
@@ -78,3 +97,4 @@ function getUserType($userEmailAddress){
     }
     return $result;
 }
+

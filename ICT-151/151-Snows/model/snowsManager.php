@@ -67,13 +67,14 @@ function deleteASnow($code)
     $addSnowQuery = 'DELETE FROM snows WHERE (`code`) LIKE (' .$strSeparator . $code .$strSeparator .')';
     require_once 'model/dbConnector.php';
     $queryResult = executeQuery($addSnowQuery);
+    $queryResult = executeQuery($addSnowQuery);
     if($queryResult){
         $result = $queryResult;
     }
     return $result;
 }
 
-function updateASnow($code, $brand, $model, $snowLength, $qtyAvailable, $description, $dailyPrice, $photo ){
+function updateASnow($code, $brand, $model, $snowLength, $qtyAvailable, $description, $dailyPrice, $photo,$active ){
     $result = false;
 
     $strSeparator = '\'';
@@ -91,6 +92,7 @@ function updateASnow($code, $brand, $model, $snowLength, $qtyAvailable, $descrip
         . ', photo=' . $strSeparator. $photo .$strSeparator
         . ', active=' . $strSeparator. $active .$strSeparator
         .' WHERE code LIKE '.$strSeparator.$code.$strSeparator;
+
 
 
     require_once 'model/dbConnector.php';

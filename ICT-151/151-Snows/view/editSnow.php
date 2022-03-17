@@ -13,9 +13,11 @@ ob_start();
 
         <?php
         foreach ($snowsResults as $result) : ?>
-
+    <article>
+            <form class='form' method='POST' action="index.php?action=updateSnow">
+            <div class="container">
             <label for="code"><b>Code</b></label>
-            <input type="text" value='<?=$result['code']; ?>' placeholder="Enter code" name="inputCode" required>
+            <input type="text" value='<?=$result['code']; ?>' placeholder="Enter code" name="inputCode" HIDDEN required>
 
             <label for="brand"><b>Brand</b></label>
             <input type="text" value='<?=$result['brand']; ?>' placeholder="Enter brand" name="inputBrand" required>
@@ -42,8 +44,10 @@ ob_start();
             <input type="number" value='<?=$result['active']; ?>' placeholder="Enter active (0/1)" name="inputActive">
                 <br>
                 <br>
-            <button><a href="index.php?action=updateSnow($_POST);">Update</a></button>
+            <button type="submit" class="btn btn-default">Update</button>
         <?php endforeach ?>
+            </div>
+        </form>
     </article>
 <?php
   $content = ob_get_clean();

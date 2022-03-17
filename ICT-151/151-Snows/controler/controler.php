@@ -122,7 +122,7 @@ function displaySnows(){
                 require "view/snows.php";
                 break;
             case 1://this a seller
-                require "view/snowsSeller.php";
+                require "view/userAdmin.php";
                 break;
             default:
                 require "view/snows.php";
@@ -133,6 +133,27 @@ function displaySnows(){
     }
 }
 
+function displayUsers(){
+    require_once "model/usersManager.php";
+    $usersResults = getUsers();
+
+    $_GET['action'] = "displayUsers";
+    if (isset($_SESSION['userType']) == 2)
+    {
+        require "view/userAdmin.php";
+    }
+}
+
+
+
+function displayUser($user_ID){
+    if (isset($registerRequest['inputUserEmailAddress'])){
+        //TODO
+    }
+    require_once "model/snowsManager.php";
+    $snowsResults= getASnow($snow_code);
+    require "view/aSnow.php";
+}
 /**
  * This function is designed to get only one snow results (for aSnow view)
  * @param none
@@ -195,6 +216,7 @@ function editSnow($snow_code){
 
 }
 function updateSnow($addSnowRequest) {
+
     if (isset($addSnowRequest['inputCode']) && isset($addSnowRequest['inputBrand']) && isset($addSnowRequest['inputModel'])&& isset($addSnowRequest['inputSnowLength'])&& isset($addSnowRequest['inputQtyAvailable'])&& isset($addSnowRequest['inputDescription'])&& isset($addSnowRequest['inputDailyPrice'])&& isset($addSnowRequest['inputPhoto'])) {
 
         //extract parameters
