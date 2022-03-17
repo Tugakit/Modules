@@ -195,3 +195,85 @@ select {
 .hotarticles a:hover {
   background-color: rgba(0, 255, 242, 0.781);
 }
+
+/*Annonces*/
+
+.back {
+  padding: auto;
+  display: flex;
+  background-color: #fff;
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  border-radius: 15px;
+  margin: 10px;
+}
+
+.btn {
+  margin: auto;
+  display: flex;
+}
+
+.back:hover {
+  background-color: rgba(0, 255, 242, 0.781);
+  box-shadow: 3spx 3px 5px #002f34;
+}
+
+.affichage {
+  display: flex;
+  margin: s auto;
+}
+
+.images {
+  border-radius: 15px;
+  margin: 70px 0 70px 70px;
+  width: 100%;
+  height: 500px;
+  background-image: url(../img/mic.jpg);
+  background-size: cover;
+}
+
+.dots {
+  position: relative;
+  padding-top: 450px;
+  padding-left: 43%;
+}
+
+.userinfo {
+  padding: 20px;
+  margin: 70px 70px 70px 20px;
+  width: 40%;
+  height: 500px;
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.userinfo img {
+  border-radius: 5px;
+  margin: 15px;
+  float: left;
+  width: 25%;
+}
+
+.userinfo h3 {
+  text-align: left;
+  font-size: 20px;
+  margin: 10px 0 10px 0;
+}
+.userinfo h4 {
+  text-align: left;
+  font-size: 18px;
+  margin: 0 0 10px 0;
+}
+
+.userinfo p {
+  margin-top: 60px;
+  text-align: left;
+  float: none;
+}
+
+.rating {
+  margin-top: 120px;
+  display: inline-block;
+  text-align: center;
+}
