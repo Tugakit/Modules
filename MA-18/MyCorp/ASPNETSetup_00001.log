@@ -1,0 +1,42 @@
+********************************************************************************
+**** Starting ASP.NET Setup at: 2013-01-14 12:04:33
+**** Registering ASP.NET isapi: c:\Windows\Microsoft.NET\Framework\v4.0.30319\aspnet_isapi.dll
+**** Internal flags: 0x00000404
+********************************************************************************
+
+2013-01-14 12:04:33	Starting	Stopping service: aspnet_state
+2013-01-14 12:04:33		Starting	Connecting to Service Manager
+2013-01-14 12:04:33		Success 	Connecting to Service Manager
+2013-01-14 12:04:33		Starting	Opening Service handle
+2013-01-14 12:04:33		Success 	Opening Service handle
+2013-01-14 12:04:33		Starting	Stopping service
+2013-01-14 12:04:33			Starting	Finding out service state
+2013-01-14 12:04:33			Success 	Finding out service state
+2013-01-14 12:04:33			Starting	Shutting down service
+2013-01-14 12:04:33			Success 	Shutting down service
+2013-01-14 12:04:33			Starting	Waiting for service to shut down
+2013-01-14 12:04:33			Success 	Waiting for service to shut down
+2013-01-14 12:04:33		Success 	Stopping service
+2013-01-14 12:04:33	Success 	Stopping service: aspnet_state
+2013-01-14 12:04:34	Starting	Changing IIS ApplicationHost.config
+2013-01-14 12:04:34	Success 	Changing IIS ApplicationHost.config
+2013-01-14 12:04:34	Starting	Determining if current ASP.NET isapi has the highest version
+2013-01-14 12:04:34	Success 	Determining if current ASP.NET isapi has the highest version
+2013-01-14 12:04:34	Starting	Installing WMI file:aspnet.mof
+2013-01-14 12:04:34	Success 	Installing WMI file:aspnet.mof
+2013-01-14 12:04:34	Starting	Setting ACLs on dirs and WMI
+2013-01-14 12:04:34		Starting	Getting location of Temporary ASP.Net directory
+2013-01-14 12:04:34		Success 	Getting location of Temporary ASP.Net directory
+2013-01-14 12:04:34		Starting	Setting ACLs on Temporary ASP.Net directory
+2013-01-14 12:04:34		Success 	Setting ACLs on Temporary ASP.Net directory
+2013-01-14 12:04:34		Starting	Setting ACLs on install root directory
+2013-01-14 12:04:34		Success 	Setting ACLs on install root directory
+2013-01-14 12:04:34		Starting	Setting ACLs on config directory
+2013-01-14 12:04:34		Success 	Setting ACLs on config directory
+2013-01-14 12:04:34		Starting	Grant access to WMI namespace: root\aspnet
+2013-01-14 12:04:34		Success 	Grant access to WMI namespace: root\aspnet
+2013-01-14 12:04:34	Success 	Setting ACLs on dirs and WMI
+2013-01-14 12:04:34	Starting	Install the ASP.NET Performance counters
+2013-01-14 12:04:34	Success 	Install the ASP.NET Performance counters
+2013-01-14 12:04:34	Starting	Install common performance counters
+2013-01-14 12:04:39	Success 	Install common performance counters
