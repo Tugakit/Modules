@@ -47,12 +47,23 @@ if (isset($_GET['action'])) {
       case 'displayUsers':
           displayUsers();
           break;
+      case 'deleteUser':
+          deleteUser($_GET['id']);
+          break;
+      case 'editUser':
+          editUser($_GET['id']);
+          break;
+      case'updateUser':
+          updateUser($_POST);
+          break;
       case 'displayAUser':
-          displayUser();
+          displayUser($_GET['id']);
+          break;
       default :
           home();
   }
 }
+
 else {
     home();
 }

@@ -16,8 +16,7 @@ ob_start();
     <article>
             <form class='form' method='POST' action="index.php?action=updateSnow">
             <div class="container">
-            <label for="code"><b>Code</b></label>
-            <input type="text" value='<?=$result['code']; ?>' placeholder="Enter code" name="inputCode" HIDDEN required>
+            <p for="code" value='<?=$result['code']; ?>'></p>
 
             <label for="brand"><b>Brand</b></label>
             <input type="text" value='<?=$result['brand']; ?>' placeholder="Enter brand" name="inputBrand" required>

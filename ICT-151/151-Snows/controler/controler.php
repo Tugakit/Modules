@@ -122,7 +122,10 @@ function displaySnows(){
                 require "view/snows.php";
                 break;
             case 1://this a seller
-                require "view/userAdmin.php";
+                require "view/snowsSeller.php";
+                break;
+            case 2://this an admin
+                require "view/snowsSeller.php";
                 break;
             default:
                 require "view/snows.php";
@@ -136,24 +139,43 @@ function displaySnows(){
 function displayUsers(){
     require_once "model/usersManager.php";
     $usersResults = getUsers();
-
     $_GET['action'] = "displayUsers";
-    if (isset($_SESSION['userType']) == 2)
-    {
-        require "view/userAdmin.php";
-    }
+    require "view/userAdmin.php";
 }
 
-
-
-function displayUser($user_ID){
+function displayUser($User_ID){
     if (isset($registerRequest['inputUserEmailAddress'])){
         //TODO
     }
-    require_once "model/snowsManager.php";
-    $snowsResults= getASnow($snow_code);
-    require "view/aSnow.php";
+    require_once "model/usersManager.php";
+    $snowsResults= getAUser($User_ID);
+    require "view/User.php";
 }
+
+function addUser($addUserRequest){
+
+    if (isset($addUserRequest['inputId']) && isset($addUserRequest['inputUserEmailAddress']) && isset($addUserRequest['inputUserHashPsw'])&& isset($addUserRequest['inputUserType'])) {
+
+        //extract parameters
+        $User_id = $addUserRequest['inputId'];
+        $UserEmail = $addUserRequest['inputUserEmailAddress'];
+        $UserPsw = $addUserRequest['inputUserHashPsw'];
+        $Usertype = $addUserRequest['inputUserType'];
+
+        require_once "model/snowsManager.php";
+        if (addNewUser($User_id, $UserEmail, $UserPsw, $Usertype)){
+            $_GET['action'] = "addSuccess";
+            $snowsResults = getSnows();
+            require "view/userAdmin.php";
+        }else{
+            $_GET['addSnowError'] = true;
+            require "view/addUser.php";
+        }
+    }else{
+        require "view/home.php";
+    }
+}
+
 /**
  * This function is designed to get only one snow results (for aSnow view)
  * @param none
@@ -209,12 +231,30 @@ function deleteSnow($snow_code){
     }
 }
 
+function deleteUser($User_id){
+    require_once "model/usersManager.php";
+    if (deleteAUser($User_id)){
+        $_GET['action'] = "deleteSuccess";
+        $usersResults = getUsers();
+        require "view/userAdmin.php";
+    }else{
+        $_GET['addSnowError'] = true;
+        require "view/userAdmin.php";
+    }
+}
+
 function editSnow($snow_code){
     require_once "model/snowsManager.php";
     $snowsResults= getASnow($snow_code);
     require "view/editSnow.php";
-
 }
+
+function editUser($User_id){
+    require_once "model/usersManager.php";
+    $usersResults= getAUser($User_id);
+    require "view/editUser.php";
+}
+
 function updateSnow($addSnowRequest) {
 
     if (isset($addSnowRequest['inputCode']) && isset($addSnowRequest['inputBrand']) && isset($addSnowRequest['inputModel'])&& isset($addSnowRequest['inputSnowLength'])&& isset($addSnowRequest['inputQtyAvailable'])&& isset($addSnowRequest['inputDescription'])&& isset($addSnowRequest['inputDailyPrice'])&& isset($addSnowRequest['inputPhoto'])) {
@@ -241,5 +281,29 @@ function updateSnow($addSnowRequest) {
         }
     }else{
         require "view/addSnow.php";
+    }
+}
+
+function updateUser($addUserRequest) {
+
+    if (isset($addUserRequest['inputId']) && isset($addUserRequest['inputUserEmailAddress']) && isset($addUserRequest['inputUserHashPsw'])&& isset($addUserRequest['inputUserType'])) {
+
+        //extract parameters
+        $User_id = $addUserRequest['inputId'];
+        $UserEmail = $addUserRequest['inputUserEmailAddress'];
+        $UserPsw = $addUserRequest['inputUserHashPsw'];
+        $Usertype = $addUserRequest['inputUserType'];
+
+        require_once "model/usersManager.php";
+        if (updateAUser($User_id, $UserEmail, $UserPsw, $Usertype)){
+            $_GET['action'] = "addSuccess";
+            $usersResults = getUsers();
+            require "view/userAdmin.php";
+        }else{
+            $_GET['addUserError'] = true;
+            require "view/home.php";
+        }
+    }else{
+        require "view/register.php";
     }
 }

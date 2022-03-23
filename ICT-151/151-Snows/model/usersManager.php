@@ -34,25 +34,28 @@ function isLoginCorrect($userEmailAddress, $userPsw){
     return $result;
 }
 
-function getUsers(){
-    $usersQuery = 'SELECT id, userEmailAddress,getUsers, userType, FROM users';
+function getUsers(): ?array
+{
+    $usersQuery = 'SELECT id, userEmailAddress,userHashPsw, userType FROM users';
 
     require_once 'model/dbConnector.php';
     $usersResults = executeQuerySelect($usersQuery);
 
     return $usersResults;
 }
-function getASnow($snow_code){
+
+function getAUser($User_id){
     $strSeparator = '\'';
 
     // Query to get the selected snow. The active code must be set to 1 to display only snows to display. It avoids possibilty to user selecting a wrong code (get paramater in url)
-    $snowQuery = 'SELECT code, brand, model, snowLength, dailyPrice, qtyAvailable, description, photo, active FROM snows WHERE code=' . $strSeparator . $snow_code . $strSeparator ;
+    $snowQuery = 'SELECT * FROM users WHERE id LIKE ' . $strSeparator . $User_id . $strSeparator ;
 
     require_once 'model/dbConnector.php';
-    $snowResults = executeQuerySelect($snowQuery);
+    $usersResults = executeQuerySelect($snowQuery);
 
-    return $snowResults;
+    return $usersResults;
 }
+
 /**
  * This function is designed to register a new account
  * @param $userEmailAddress
@@ -98,3 +101,55 @@ function getUserType($userEmailAddress){
     return $result;
 }
 
+function addNewUser($code, $brand, $model, $snowLength, $qtyAvailable, $description, $dailyPrice, $photo ){
+    $result = false;
+
+    $strSeparator = '\'';
+
+    // test de requete manuel pour debug
+    // $addSnowQuery = "INSERT INTO snows (`code`, `brand`,`model`, `snowLength`,`qtyAvailable`, `description`,`dailyPrice`, `photo`,`active`) VALUES ('a','a','a','1','1','a','1','a','1')";
+
+    $addUserQuery = 'INSERT INTO users (`id`, `userEmailAddress`,`userHashPsw`, `userType`) VALUES (' .$strSeparator . $User_id .$strSeparator . ',' . $strSeparator . $brand . $strSeparator. ',' .$strSeparator . $model . $strSeparator . ',' . $strSeparator . $snowLength . $strSeparator . ',' . $strSeparator . $qtyAvailable . $strSeparator. ',' . $strSeparator . $description .$strSeparator . ','. $strSeparator . $dailyPrice . $strSeparator . ',' . $strSeparator . $photo . $strSeparator . ',' . $strSeparator . '1' . $strSeparator . ')';
+
+    require_once 'model/dbConnector.php';
+    $queryResult = executeQuery($addUserQuery);
+    if($queryResult){
+        $result = $queryResult;
+    }
+    return $result;
+}
+
+function deleteAUser($User_id)
+{
+    require_once 'model/dbConnector.php';
+    $result = false;
+    $strSeparator = '\'';
+    $addUserQuery = 'DELETE FROM users WHERE (`id`) LIKE (' .$strSeparator . $User_id .$strSeparator.')';
+    $queryResult = executeQuery($addUserQuery);
+    if($queryResult){
+        $result = $queryResult;
+    }
+    return $result;
+}
+
+function updateAUser($User_id, $UserEmail, $UserPsw, $Usertype){
+    $result = false;
+
+    $strSeparator = '\'';
+
+    // test de requete manuel pour debug
+    // $addSnowQuery = "INSERT INTO snows (`code`, `brand`,`model`, `snowLength`,`qtyAvailable`, `description`,`dailyPrice`, `photo`,`active`) VALUES ('a','a','a','1','1','a','1','a','1')";
+
+    $updateSnowQuery = 'UPDATE users SET id= ' . $strSeparator . $User_id . $strSeparator
+        . ', userEmailAddress=' . $strSeparator . $UserEmail . $strSeparator
+        . ', userHashPsw=' . $strSeparator. $UserPsw .$strSeparator
+        . ', userType=' . $strSeparator. $Usertype .$strSeparator
+        .' WHERE id LIKE '.$strSeparator.$User_id.$strSeparator;
+
+    require_once 'model/dbConnector.php';
+    $queryResult = executeQuery($addUserQuery);
+    if($queryResult){
+        $result = $queryResult;
+    }
+    return $result;
+}
