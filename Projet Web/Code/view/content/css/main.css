@@ -429,6 +429,6 @@ border-radius: 5px;
   .div13 { grid-area: 3 / 5 / 4 / 6; text-align: center}
 
   .Reseaux{
-    display:flex;
     margin:auto;
+    display: flex;
   }
