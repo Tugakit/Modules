@@ -9,17 +9,6 @@ body {
   display: block;
 }
 
-h1,
-h2,
-h3 {
-  text-align: center;
-}
-nav {
-  padding: 10px;
-  color: #24e5db;
-  background-color: #002f34;
-}
-
 .searchBar {
   width: 50%;
   height: 50px;
@@ -366,8 +355,8 @@ select {
 .avis{ 
   text-align: center;
   font-size: 18px;
-  opacity: 100% !important;
-  margin: 20px auto 0 auto !important;
+  opacity: 100% ;
+  margin: 20px auto 0 auto ;
 }
 
 .profilecontact {
