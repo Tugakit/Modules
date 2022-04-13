@@ -3,6 +3,7 @@
     [System.Reflection.Assembly]::LoadWithPartialName("System.windows.forms") | Out-Null
 
     $foldername = New-Object System.Windows.Forms.FolderBrowserDialog #Création de la fenetre de selection du dossier de destination
+    $foldername.ShowDialog($topmost)
     $foldername.Description = "Select a folder"
     $foldername.rootfolder = "MyComputer"
     $foldername.SelectedPath = $initialDirectory

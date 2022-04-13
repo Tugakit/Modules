@@ -1,8 +1,9 @@
 ﻿param(
-$location
+#Pour rendre un paramètre obligatoire et avec un type par défaut:
+[Parameter (Mandatory=$True)] [string]$location #Si je voulais que le paramètre aie une valeur par défaut: $location='C:\ESSAIS'
 )
 
-$location = Read-Host "Entrez le dossier de destination:"
+#$location = Read-Host "Entrez le dossier de destination:" si je veux que l'utilisateur interagisse dans le terminal
 Set-Location -Path "$location"
 
 # Si le dossier ESSAIS est encore présent, dans le cas ou il en a pas de dossier l'erreur est ignorée
